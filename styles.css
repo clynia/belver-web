@@ -394,20 +394,6 @@ input:focus, select:focus, textarea:focus { outline: 2px solid var(--rojo); outl
 .sitio-pie li { margin-bottom: .55em; }
 .sitio-pie a { text-decoration: none; }
 .sitio-pie a:hover { text-decoration: underline; }
-.rubrica {
-  margin-top: 38px;
-  padding-top: 16px;
-  border-top: 1px solid var(--trama);
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px 26px;
-  justify-content: space-between;
-  font-family: var(--mono);
-  font-size: 11px;
-  letter-spacing: .05em;
-  text-transform: uppercase;
-  color: var(--gris);
-}
 
 .saltar {
   position: absolute;
