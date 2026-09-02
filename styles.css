@@ -39,21 +39,8 @@ img { height: auto; display: block; }
 
 .wrap { max-width: var(--ancho); margin: 0 auto; padding: 0 var(--marco); }
 
-.doc { display: grid; grid-template-columns: var(--meta) minmax(0, 1fr); gap: 0 44px; }
-.doc > .meta { grid-column: 1; }
-.doc > .cuerpo { grid-column: 2; }
+.doc { padding-left: calc(var(--meta) + 44px); }
 
-.meta {
-  font-family: var(--mono);
-  font-size: 11px;
-  line-height: 1.5;
-  letter-spacing: .06em;
-  text-transform: uppercase;
-  color: var(--gris);
-  padding-top: .55em;
-}
-.meta p { margin: 0 0 .5em; text-align: left; hyphens: none; }
-.meta .num { color: var(--tinta); }
 
 /* ---------- Texto ---------- */
 
@@ -139,17 +126,6 @@ blockquote cite {
   color: var(--gris);
 }
 
-.fuente {
-  font-family: var(--mono);
-  font-size: 11px;
-  letter-spacing: .04em;
-  color: var(--gris);
-  display: block;
-  margin: -.55em 0 1.4em;
-  text-align: left;
-  hyphens: none;
-}
-.fuente a { color: var(--gris); }
 
 /* ---------- Cabecera ---------- */
 
@@ -289,6 +265,17 @@ section:first-of-type { border-top: 0; }
 .lista strong { font-family: var(--sans); font-weight: 600; display: block; margin-bottom: .18em; }
 .lista p { margin: 0; max-width: 62ch; }
 
+.aviso {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: .04em;
+  line-height: 1.5;
+  color: var(--rojo);
+  display: block;
+  text-align: left;
+  hyphens: none;
+}
+
 /* ---------- Botones ---------- */
 
 .btn {
@@ -407,24 +394,12 @@ input:focus, select:focus, textarea:focus { outline: 2px solid var(--rojo); outl
 }
 .saltar:focus { left: 0; }
 
-.aviso-maqueta {
-  background: var(--tinta);
-  color: var(--papel);
-  font-family: var(--mono);
-  font-size: 11px;
-  letter-spacing: .05em;
-  text-transform: uppercase;
-  padding: 9px 0;
-}
-.aviso-maqueta .wrap { text-align: center; }
 
 /* ---------- Adaptacion ---------- */
 
 @media (max-width: 860px) {
   body { font-size: 17px; }
-  .doc { grid-template-columns: 1fr; gap: 0; }
-  .doc > .meta, .doc > .cuerpo { grid-column: 1; }
-  .doc > .meta { padding-bottom: 16px; }
+  .doc { padding-left: 0; }
   .columnas > * { border-left: 0; border-top: 1px solid var(--trama); padding: 22px 0 0; margin-top: 22px; }
   .columnas > *:first-child { border-top: 0; padding-top: 0; margin-top: 0; }
   .nav { display: none; }
@@ -462,6 +437,6 @@ input:focus, select:focus, textarea:focus { outline: 2px solid var(--rojo); outl
 }
 
 @media print {
-  .sitio-cab, .sitio-pie, .aviso-maqueta, .acciones { display: none; }
+  .sitio-cab, .sitio-pie, .acciones { display: none; }
   body { font-size: 11pt; background: #fff; }
 }
